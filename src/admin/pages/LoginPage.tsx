@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { Hotel } from 'lucide-react';
+import { Shirt } from 'lucide-react';
 
 export default function LoginPage() {
   const { signIn } = useAuth();
@@ -21,7 +21,7 @@ export default function LoginPage() {
     if (error) {
       setError('Email o contraseña incorrectos.');
     } else {
-      navigate('/admin');
+      navigate('/');
     }
   }
 
@@ -30,11 +30,11 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="flex flex-col items-center mb-8">
-          <div className="w-14 h-14 rounded-xl bg-amber-400 flex items-center justify-center mb-4">
-            <Hotel size={28} className="text-gray-900" />
+          <div className="w-14 h-14 rounded-xl bg-rose-400 flex items-center justify-center mb-4">
+            <Shirt size={28} className="text-white" />
           </div>
-          <h1 className="text-white text-2xl font-bold tracking-wide">Bastille Hotel</h1>
-          <p className="text-gray-400 text-sm mt-1">Panel de Administración</p>
+          <h1 className="text-white text-2xl font-bold tracking-wide">Tienda Cami</h1>
+          <p className="text-gray-400 text-sm mt-1">Panel de Ventas</p>
         </div>
 
         {/* Card */}
@@ -49,8 +49,8 @@ export default function LoginPage() {
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 required
-                placeholder="mauri@bastillehotel.bo"
-                className="w-full bg-gray-700 text-white rounded-lg px-4 py-2.5 text-sm border border-gray-600 focus:outline-none focus:border-amber-400 placeholder-gray-500"
+                placeholder="cami@tiendacami.bo"
+                className="w-full bg-gray-700 text-white rounded-lg px-4 py-2.5 text-sm border border-gray-600 focus:outline-none focus:border-rose-400 placeholder-gray-500"
               />
             </div>
 
@@ -62,7 +62,7 @@ export default function LoginPage() {
                 onChange={e => setPassword(e.target.value)}
                 required
                 placeholder="••••••••"
-                className="w-full bg-gray-700 text-white rounded-lg px-4 py-2.5 text-sm border border-gray-600 focus:outline-none focus:border-amber-400 placeholder-gray-500"
+                className="w-full bg-gray-700 text-white rounded-lg px-4 py-2.5 text-sm border border-gray-600 focus:outline-none focus:border-rose-400 placeholder-gray-500"
               />
             </div>
 
@@ -73,7 +73,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-amber-400 hover:bg-amber-300 text-gray-900 font-semibold py-2.5 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-rose-500 hover:bg-rose-400 text-white font-semibold py-2.5 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Ingresando...' : 'Ingresar'}
             </button>
@@ -81,7 +81,7 @@ export default function LoginPage() {
         </div>
 
         <p className="text-center text-gray-600 text-xs mt-6">
-          Solo para personal del hotel · Bastille Hotel © {new Date().getFullYear()}
+          Solo para personal autorizado · Tienda Cami © {new Date().getFullYear()}
         </p>
       </div>
     </div>

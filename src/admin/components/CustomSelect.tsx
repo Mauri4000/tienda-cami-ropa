@@ -12,22 +12,23 @@ interface Props {
   options: SelectOption[];
   placeholder?: string;
   className?: string;
-  accent?: 'amber' | 'green' | 'blue' | 'indigo';
+  accent?: 'amber' | 'green' | 'blue' | 'indigo' | 'rose';
   size?: 'sm' | 'md';
 }
 
 const ACCENT = {
-  amber:  { ring: 'ring-amber-400 border-amber-400', active: 'bg-amber-50 text-amber-700', check: 'text-amber-600' },
-  green:  { ring: 'ring-green-400 border-green-400', active: 'bg-green-50 text-green-700',  check: 'text-green-600' },
-  blue:   { ring: 'ring-blue-400 border-blue-400',   active: 'bg-blue-50 text-blue-700',    check: 'text-blue-600'  },
-  indigo: { ring: 'ring-indigo-400 border-indigo-400',active:'bg-indigo-50 text-indigo-700',check: 'text-indigo-600'},
+  amber:  { ring: 'ring-amber-400 border-amber-400',   active: 'bg-amber-50 text-amber-700',   check: 'text-amber-600'  },
+  green:  { ring: 'ring-green-400 border-green-400',   active: 'bg-green-50 text-green-700',   check: 'text-green-600'  },
+  blue:   { ring: 'ring-blue-400 border-blue-400',     active: 'bg-blue-50 text-blue-700',     check: 'text-blue-600'   },
+  indigo: { ring: 'ring-indigo-400 border-indigo-400', active: 'bg-indigo-50 text-indigo-700', check: 'text-indigo-600' },
+  rose:   { ring: 'ring-rose-400 border-rose-400',     active: 'bg-rose-50 text-rose-700',     check: 'text-rose-600'   },
 };
 
 export default function CustomSelect({
   value, onChange, options,
   placeholder = '— Seleccionar —',
   className = '',
-  accent = 'amber',
+  accent = 'rose',
   size = 'md',
 }: Props) {
   const [open, setOpen] = useState(false);
